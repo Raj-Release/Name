@@ -7,8 +7,9 @@
 
     <groupId>com.jenkov</groupId>
 
-    <artifactId>hello-world</artifactId>
+    <artifactId>test</artifactId>
 
     <version>1.0.0</version>
+    <packaging>war</packaging>
 
 </project>
