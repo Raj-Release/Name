@@ -1,5 +1,10 @@
 pipeline {
 	agent { label 'Linux'}
+	parameters {
+    choice(
+        name: 'Env',
+        choices: "SIT\nUAT",
+        description: 'Select the Deployment Environment' )
     stages {
         stage('SCM Checkout') {
             steps {
