@@ -1,6 +1,7 @@
 pipeline {
 	agent {
 		label 'Linux'
+	}
 
     stages {
         stage('SCM Checkout') {
@@ -15,5 +16,5 @@ pipeline {
         }
 		
     }
-	}
+	
 }
