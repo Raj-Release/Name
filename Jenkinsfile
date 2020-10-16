@@ -1,7 +1,7 @@
 pipeline {
-	agent {
-		label 'Linux'
-	}
+	agent { label 'Linux'}
+	tools {
+		maven 'apache-maven-3.6.3'
 
     stages {
         stage('SCM Checkout') {
