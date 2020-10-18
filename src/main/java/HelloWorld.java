@@ -1,13 +1,15 @@
-package hello;
+package com.coveros.demo.helloworld;
 
-import org.joda.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class HelloWorld {
-    public static void main(String[] args) {
-      LocalTime currentTime = new LocalTime();
-		  System.out.println("The current local time is: " + currentTime);
 
-        Greeter greeter = new Greeter();
-        System.out.println(greeter.sayHello());
-    }
+  public static void main(final String[] args) {
+    final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("h:mm:ss a 'on' MMMM d, yyyy'.'");
+    final LocalDateTime now = LocalDateTime.now();
+
+    System.out.println("Hello, World! The current time is " + dtf.format(now));
+  }
+
 }
