@@ -11,7 +11,7 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
-	stage('Build') {
+	stage('Nexus artifact upload') {
             steps {
                 nexusArtifactUploader (
                artifacts: [[artifactId: 'helloworld', 
