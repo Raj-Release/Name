@@ -1,6 +1,6 @@
 pipeline {
 	agent { label 'Linux'}
-	option{ 
+	options{ 
 	timestamps()
 	}
 	stages {
