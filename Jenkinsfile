@@ -1,5 +1,6 @@
 pipeline {
 	agent { label 'Linux'}
+	timestamp()
     stages {
         stage('SCM Checkout') {
             steps {
