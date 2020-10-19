@@ -1,7 +1,7 @@
 pipeline {
 	agent { label 'Linux'}
 	option{ 
-	timestamp()
+	timestamps()
 	}
 	stages {
         stage('SCM Checkout') {
