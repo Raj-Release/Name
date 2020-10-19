@@ -3,6 +3,12 @@ pipeline {
 	options{ 
 	timestamps()
 	}
+	environment {
+           projectArtifactId = 'ArtifactId'
+	   projectGroupId = 'GroupId'
+	   projectVersion = 'Version'
+	   projectName = 'Name'
+	}
 	stages {
              stage ('Checkout source code')
           {
