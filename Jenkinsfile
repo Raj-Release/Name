@@ -2,7 +2,6 @@ pipeline {
 	agent { label 'Linux'}
 	options{ 
 	timestamps()
-	buildDiscarder(logRotator(daysToKeepStr: '3', numToKeepStr: '3'))
 	}
 	stages {
              stage ('Checkout source code')
