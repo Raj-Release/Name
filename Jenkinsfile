@@ -5,11 +5,20 @@ pipeline {
 	buildDiscarder(logRotator(daysToKeepStr: '3', numToKeepStr: '3'))
 	}
 	stages {
-        stage('SCM Checkout') {
-            steps {
-                git credentialsId: 'f93634d9-d19e-4361-a4d9-aebfd7d2edac', url: 'https://github.com/Raj-Release/Name.git'
-            }
-        }
+             stage ('Checkout source code')
+          {
+	   steps{
+	      git credentialsId: 'f93634d9-d19e-4361-a4d9-aebfd7d2edac', url: 'https://github.com/Raj-Release/Name.git'
+           script {
+              pom = readMavenPom file: pom.xml
+              projectArtifactId = pom.getArtifactId()
+              projectGroupId = pom.getGroupId()
+              projectVersion = pom.getVersion()
+              projectName = pom.getName()
+                }
+           }
+     }
+	}
         stage('Build') {
             steps {
                 sh 'mvn clean install'
