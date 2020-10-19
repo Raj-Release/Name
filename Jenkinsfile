@@ -11,6 +11,23 @@ pipeline {
                 sh 'mvn clean install'
             }
         }
+	stage('Build') {
+            steps {
+                nexusArtifactUploader (
+               artifacts: [[artifactId: 'helloworld', 
+			   classifier: '', 
+			   file: 'target/helloworld-1.1.jar', 
+			   type: 'jar']], 
+			   credentialsId: '37413181-35c0-4210-ab3b-ceecaac947c4', 
+			   groupId: 'com.coveros.demo', 
+			   nexusUrl: '3.6.217.3:8081', 
+			   nexusVersion: 'nexus3', 
+			   protocol: 'http', 
+			   repository: 'Test', 
+			   version: '1.1'
+			   )
+            }
+        }
 		
     }
 	
