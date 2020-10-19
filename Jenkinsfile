@@ -3,24 +3,11 @@ pipeline {
 	options{ 
 	timestamps()
 	}
-	environment {
-           projectArtifactId = 'ArtifactId'
-	   projectGroupId = 'GroupId'
-	   projectVersion = 'Version'
-	   projectName = 'Name'
-	}
 	stages {
              stage ('Checkout source code')
           {
 	   steps{
 	      git credentialsId: 'f93634d9-d19e-4361-a4d9-aebfd7d2edac', url: 'https://github.com/Raj-Release/Name.git'
-           script {
-              pom = readMavenPom file: pom.xml
-              projectArtifactId = pom.getArtifactId()
-              projectGroupId = pom.getGroupId()
-              projectVersion = pom.getVersion()
-              projectName = pom.getName()
-                }
            }
      }
 	
