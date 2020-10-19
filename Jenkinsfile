@@ -2,9 +2,7 @@ pipeline {
 	agent { label 'Linux'}
 	options{ 
 	timestamps()
-	properties([
-               buildDiscarder(logRotator(daysToKeepStr: '3', numToKeepStr: '3')),
-        ])
+	buildDiscarder(logRotator(daysToKeepStr: '3', numToKeepStr: '3'))
 	}
 	stages {
         stage('SCM Checkout') {
