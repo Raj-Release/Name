@@ -1,20 +1,22 @@
 pipeline {
-	agent { label 'Linux'}
+	agent { 
+	  label 'Linux'
+	}
 	options{ 
-	timestamps()
+	  timestamps()
 	}
 	stages {
              stage ('Checkout source code')
-          {
-	   steps{
+    {
+	  steps{
 	      git credentialsId: 'f93634d9-d19e-4361-a4d9-aebfd7d2edac', url: 'https://github.com/Raj-Release/Name.git'
-           }
+      }
      }
-	
-        stage('Build') {
+	 stage('Build') {
             steps {
                 sh 'mvn clean install'
             }
         }
+    }
 }
 	
