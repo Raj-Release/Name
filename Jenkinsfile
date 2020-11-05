@@ -2,10 +2,7 @@ pipeline {
 	agent { 
 	  label 'Linux'
 	}
-	tools { 
-        maven 'Maven 3.6.3' 
-	}
-    options{ 
+	options{ 
 	  timestamps()
 	}
 	stages {
