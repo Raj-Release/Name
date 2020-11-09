@@ -13,9 +13,25 @@ pipeline {
       }
      }
 	 stage('Build') {
-            steps {
+            steps { 
                 sh 'mvn clean package'
             }
         }
+	stage('Upload war file into nexus')
+	  step{ 
+	    nexusArtifactUploader ( artifacts: [[artifactId: 'helloworld', 
+                      classifier: '', 
+					  file: 'target/helloworld-1.4.jar', 
+					  type: 'jar']], 
+                      credentialsId: '409761be-c2e9-423a-a795-b8000c04104b',
+                      groupId: 'com.coveros.demo', 
+                      nexusUrl: '15.207.106.201:8081', 
+                      nexusVersion: 'nexus3', 
+                      protocol: 'http', 
+                      repository: 'Sample_both', 
+                      version: '1.4'
+					  )
+		  
     }
+ }
 }
