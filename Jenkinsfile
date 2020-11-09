@@ -1,3 +1,6 @@
+
+
+
 pipeline {
 	agent { 
 	  label 'Linux'
@@ -18,7 +21,7 @@ pipeline {
             }
         }
 	stage('Upload war file into nexus')
-	  step{ 
+	  steps{ 
 	    nexusArtifactUploader ( artifacts: [[artifactId: 'helloworld', 
                       classifier: '', 
 					  file: 'target/helloworld-1.4.jar', 
@@ -35,3 +38,4 @@ pipeline {
     }
  }
 }
+
