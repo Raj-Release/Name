@@ -26,10 +26,5 @@ stages{
 	   echo 'Second check updated'
 	  }
 	}
-    stage('CleanWorkspace') {
-            steps {
-                cleanWs()
-            }
-        }
 }
 }
