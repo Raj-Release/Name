@@ -26,5 +26,10 @@ stages{
 	   echo 'Second check updated'
 	  }
 	}
+     post { 
+        always { 
+            cleanWs()
+        }
+    }
 }
 }
