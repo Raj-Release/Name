@@ -1,0 +1,6 @@
+{
+"SIT": {
+		"galaxy_git_url":="http://192.168.2.31:8080"
+		"galaxy_git_branch"="master"
+		}
+}
