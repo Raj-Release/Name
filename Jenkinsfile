@@ -1,6 +1,6 @@
 pipeline {
 	  agent { 
-	         label 'Linux'
+	         label 'slave'
 	  }
 	  options { 
 	         timestamps()
